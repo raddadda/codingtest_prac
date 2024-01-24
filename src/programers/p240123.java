@@ -7,31 +7,38 @@ public class p240123 {
 	    public int solution(String s) {
 	        int answer = 0;
 	        Queue<Character> q = new LinkedList<>();
-	        Stack<Character> stack = new Stack<>();
+	       
 	        for(int i=0; i<s.length(); i++){
 	            q.add(s.charAt(i));
-	            stack.add(s.charAt(i));
 	        }
 	        for(int i=0; i<s.length(); i++){
-	            if(q.isEmpty()==true){
-	                break;
+	            Character r = q.remove();
+	            q.add(r);
+	             Stack<Character> stack = new Stack<>();
+	            for(int j=0; j<s.length(); j++){
+	                Character l = q.remove();
+	                q.add(l);
+	                if(stack.isEmpty()){
+	                    stack.push(l);
+	                }
+	                else if(l == ']' && stack.peek() == '['){
+	                    stack.pop();
+	                }
+	                else if(l == '}' && stack.peek() == '{'){
+	                    stack.pop();
+	                }
+	                else if(l == ')' && stack.peek() == '('){
+	                    stack.pop();
+	                }else{
+	                    stack.push(l);
+	                }
+	            
 	            }
-	            Character top = q.peek();
-	            q.remove();
-	  
-	            if(stack.peek() == '{' && top=='}'){
-
+	            if(stack.isEmpty()){
 	                answer++;
 	            }
-	            if(stack.peek() == '[' && top==']'){
-	                answer++;
-	            }
-	            if(stack.peek() == '(' && top==')'){
-	                answer++;
-	            }
-	            stack.push(top);
+	            
 	        }
-	        
 	        return answer;
 	    }
 	}
