@@ -25,7 +25,6 @@ public class bj11724 {
 		}
 		for(int i=1; i<=N; i++) {
 			if(!visit[i]) {
-				
 				dfs(i);
 				cnt++;
 			}
