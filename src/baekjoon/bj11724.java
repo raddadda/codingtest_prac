@@ -15,7 +15,6 @@ public class bj11724 {
 		
 		map = new int[N+1][N+1];
 		visit = new boolean[N+1];
-		cnt=0;
 		for(int i=0; i<M; i++){
 			st = new StringTokenizer(br.readLine());
 			int x=Integer.parseInt(st.nextToken());
@@ -23,25 +22,24 @@ public class bj11724 {
 			
 			map[x][y]=map[y][x]=1;
 		}
-		for(int i=1; i<=N; i++) {
-			if(!visit[i]) {
-				dfs(i);
-				cnt++;
-			}
-		}
-		System.out.println(cnt);
+//		for(int i=0; i<N; i++) {
+//			if(visit[i]) {
+//				
+//			}
+//		}
+		dfs(1);
 	}
 	
 	public static void dfs(int start){
-		if(visit[start]) {		
-			
+		if(visit[start]) {
+			System.out.println("@@");
 			return;
 		}
 		visit[start] = true;
-
+		//cnt++;
 		
 		for(int i=0; i<map[start].length; i++) {
-			if(map[start][i]==1&&!visit[i]) {
+			if(map[start][i]==1&&visit[i]) {
 				dfs(i);
 			}
 		}
