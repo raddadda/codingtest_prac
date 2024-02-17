@@ -23,7 +23,7 @@ public class bj10971 {
 			}
 		}
 		visit = new boolean[N+1];
-		for(int i=1; i<=N; i++){
+		for(int i=0; i<N; i++){
 			visit[i]=true;
 			dfs(i,i,0,0);
 			visit[i]=false;
@@ -33,19 +33,24 @@ public class bj10971 {
 	}
 	
 	static void dfs(int start,int now,int sum,int cnt){
+		//System.out.println(start+" "+now+" "+sum+" "+cnt);
 		if(cnt==N-1){
+			System.out.println(now+"@"+start);
 			if(map[now][start]!=0) {
 				sum+= map[now][start];
-				if(sum<max) {
+				
+				if(sum<max){
 					max=sum;
-				} 
+				}
 			}
 			return;
 		}
 		
-		for(int i=1; i<map[0].length; i++){
+		for(int i=0; i<map[0].length; i++){
+			
 			if(map[now][i]!=0&&!visit[i]){
 				visit[i]=true;
+				System.out.println(now+" "+i);
 				dfs(start,i,sum+map[now][i],cnt+1);
 				visit[i]=false;
 			}
