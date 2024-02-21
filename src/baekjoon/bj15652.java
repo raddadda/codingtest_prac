@@ -10,6 +10,7 @@ public class bj15652 {
 	static boolean[] visit;
 	static int N;
 	static int M;
+	static int tmp;
 	static StringBuilder sb = new StringBuilder();
 	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -20,12 +21,12 @@ public class bj15652 {
 		 M = Integer.parseInt(st.nextToken());
 		arr = new int[M];
 		visit = new boolean[N];
-		dfs(0);
+		dfs(0,1);
 		System.out.print(sb);
 		
 	}
 	
-	static void dfs(int depth) {
+	static void dfs(int depth,int num) {
 		if(depth == M) {
 			for(int val : arr) {
 				sb.append(val).append(' ');
@@ -34,15 +35,10 @@ public class bj15652 {
 			return;
 		}
 		
-		for(int i=0; i<N; i++){
-			//System.out.print("@"+i);
-			if(arr[depth-1]<=i) {
-				//System.out.print("!"+i);
-				visit[i]= true;
-				arr[depth]=i+1;
-				dfs(depth+1);
-				visit[i]= false;
-			}
+		for(int i=num; i<=N; i++){
+			arr[depth]=i;
+			dfs(depth+1,i);
+				
 		}
 	}
 }
