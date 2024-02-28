@@ -40,12 +40,12 @@ public class bj15657 {
 		}
 		
 		for(int i=tmp; i<num.length; i++){
-		//	if(!visit[i]) {
+
 				visit[i]= true;
 				arr[depth]= num[i];
 				dfs(depth+1,i);
 				visit[i]= false;
-		//	}
+
 		}
 	}
 }
