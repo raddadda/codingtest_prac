@@ -24,10 +24,6 @@ public class bj9095 {
 			int num = Integer.parseInt(st.nextToken());
 			sb.append(arr[num]).append('\n');
 		}
-		System.out.print(sb);
-		
-		
-	}
-
-	
+		System.out.print(sb);	
+	}	
 }
