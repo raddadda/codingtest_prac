@@ -1,6 +1,7 @@
 package programers;
 
 public class p240312_1 {
+	//나머지가1이 되는 수  찾
     public int solution(int n) {
         int answer = 0;
         
