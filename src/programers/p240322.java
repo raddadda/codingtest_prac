@@ -14,7 +14,7 @@ public class p240322 {
 	        
 	        /**
 	         *다른사람 풀이
-	         *toCharArray() 는 String을 char배열로 바꿔주는 메서
+	         *toCharArray() 는 String을 char배열로 바꿔주는 메서드
 			char[] ch = phone_number.toCharArray();
 			for(int i=0; i<ch.length-4; i++){
 				ch[i]='*';
