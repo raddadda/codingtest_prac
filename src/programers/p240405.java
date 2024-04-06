@@ -17,6 +17,8 @@ public class p240405 {
 	            answer.append(" ");
 	        }
 	        answer.deleteCharAt(answer.length()-1);
+	        
+	        //테스트케이스는 맞았지만 제출시테스트케이스에서는 막혔음.
 	        return answer.toString();
 	    }
 	}
