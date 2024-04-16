@@ -12,10 +12,10 @@ public class bj1543 {
 		
 		int size = n.length();
 		int size2 = n2.length();
-		
+		n = n.replace(n2,"");
 
-		n = n.replace(n2, "");
-		System.out.println((size - n.length()) / size2);
+		System.out.println((size - n.length())/size2);
+	
 	}
 
 }
